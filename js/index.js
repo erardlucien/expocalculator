@@ -32,8 +32,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     
         let resultValue = baseValue ** expValue;
-
-        console.log(resultValue);
     
         if( resultValue > MAX ||  !isFinite(resultValue) ) {
             result.textContent = `!The result exceed ${MAX}!`;
