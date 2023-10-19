@@ -5,6 +5,7 @@ let exponent = document.querySelector('.exponent');
 let result = document.querySelector('.result');
 let calculate = document.querySelector('.calculate');
 const MAX = 100 ** 25;
+const MAXLENGTH = 12;
 
 window.addEventListener('DOMContentLoaded', () => {
     calculate.addEventListener('click', () => {
@@ -37,7 +38,10 @@ window.addEventListener('DOMContentLoaded', () => {
             result.textContent = `!The result exceed ${MAX}!`;
             return;
         }
+
+        let resultValueLength = resultValue.toString().length;
     
-        result.innerHTML = ` The result is <br>${ resultValue.toPrecision(5) }`;
+        result.innerHTML = `The result is <br>${ resultValueLength > MAXLENGTH ?
+            resultValue.toPrecision(5) : resultValue }`;
     });
 })
