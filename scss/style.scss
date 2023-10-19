@@ -1,0 +1,127 @@
+// Reset
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    font-family: inherit;
+}
+
+// custom-variables
+
+$padding: 2rem 1.5rem;
+$margin: 1.2rem 0 0 0;
+$clr-primary: rgb(248, 248, 248);
+$clr-neutral: rgb(241, 241, 241);
+$clr-ternary: rgb(13, 13, 13);
+$clr-secondary: rgb(100, 203, 250);
+$clr-gray: rgb(223, 223, 223);
+
+// custom-variables
+
+:root {
+    --font-size: 1.6rem;
+
+    @media screen and (min-width: 40em) {
+        --font-size: 1.4rem;
+    }
+
+    @media screen and (min-width: 64em) {
+        --font-size: 1.3rem;
+    }
+
+    @media screen and (min-width: 80em) {
+        --font-size: 1.2rem;
+    }
+}
+
+// neutral
+
+%neutral {
+    background-color: $clr-neutral;
+    color: $clr-ternary;
+    $padding: 1.2rem 3rem;
+    text-align: center;
+    padding: $padding;
+}
+
+// container
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $clr-primary;
+}
+
+// exp_calculator
+
+.exp_calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    $padding: 2rem 3.2rem;
+    min-height: min-content;
+    min-width: min-content;
+    padding: $padding;
+    background-color: $clr-secondary;
+
+    * {
+        margin: $margin;
+        font-size: var(--font-size);
+    }
+
+    h1 {
+        color: $clr-primary;
+    }
+
+    label {
+        display: block;
+        padding: $padding;
+        text-align: center;
+        color: $clr-primary;
+    }
+
+    input {
+        display: block;
+        padding: $padding;
+        outline: 0.1rem solid transparent;
+        border: 0.1rem solid $clr-gray;
+        max-width: 15rem;
+        
+        ::placeholder {
+            color: $clr-gray;
+        }       
+    }
+
+    button {
+        display: block;
+        @extend %neutral;
+        border: 0.1rem solid $clr-gray;
+        outline: 0.1rem solid transparent;
+
+        &:active {
+            background-color: $clr-ternary;
+            color: $clr-primary;
+        }
+    }
+
+}
+
+.result {
+    @extend %neutral;
+    white-space: nowrap;
+
+    &:empty {
+        padding: 0;
+    }
+}
