@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
     calculate.addEventListener('click', () => {
         let baseContent = base.value;
         let expContent = exponent.value;
-        const ALLOWED_CHARACTER = /^[-]{0,1}\d+$/;
+        const ALLOWED_CHARACTER = /^[- | +]{0,1}\d+$/;
         
     
         if( !ALLOWED_CHARACTER.test(baseContent) || !ALLOWED_CHARACTER.test(expContent) ) {
