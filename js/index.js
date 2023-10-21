@@ -7,6 +7,13 @@ let calculate = document.querySelector('.calculate');
 const MAX = 100 ** 25;
 const MAXLENGTH = 12;
 
+function removeResultContent() {
+    result.textContent = '';
+}
+
+base.addEventListener('keyup', removeResultContent);
+exponent.addEventListener('keyup', removeResultContent);
+
 window.addEventListener('DOMContentLoaded', () => {
     calculate.addEventListener('click', () => {
         let baseContent = base.value;
